@@ -1,0 +1,162 @@
+body{
+    background: url("../images/body-bg.png") center center;
+    background-size:cover ;
+    margin: 0 !important;
+}
+.wrapper{
+    border: 1px solid #D0D0D0;
+    -webkit-box-shadow: 0 0 8px #111F57;
+    background-color: #ffffff;
+    padding: 0 20px;
+    overflow: hidden;
+    margin: 0% 10%;
+
+}
+.row{
+
+    margin: 1%;
+    margin-right: 0%;
+    margin-left: 5%;
+
+}
+.form-control {
+  border-radius: 0px;
+}
+.header,.footer {
+    margin: 0% -2%;
+    background-color: rgba(21, 25, 25, 0.8);
+    color: rgba(250, 250, 250, 0.8);
+    // height: 100px !important;
+    width: 104%;
+    padding: 2%  0 8% 0;
+}
+.top-header{
+    margin-left: 15%;
+}
+.footer{
+    height: 70px !important;
+    width: 104%;
+    padding: 2% 0%;
+}
+.container{
+    width: 100%;
+    margin: 0% 0%;
+    font-size: 18px;
+    padding-bottom: 11%;
+
+}
+.title{
+    text-align: center;
+    margin: 0% 25%;
+    color: whitesmoke;
+}
+.sub-title{
+    margin-top:-7px;
+}
+.footer-title{
+    margin-left: 30%;
+    margin-top:0px;
+}
+.heading{
+    font-weight: bold;
+}
+.custom{
+    border: 4px solid rgb(204, 204, 204);
+    border-top: 0px; 
+    border-left: 0px; 
+    border-right: 0px; 
+    border-radius: 0px;
+    width: 212px;
+}
+.opinion{
+    margin: 5px;
+}
+#logo{
+    width: 103%;
+    height: 100%;
+}
+#logo-2{
+    width: 178px;
+    height: 118px;
+    margin-top:21px;
+}
+.left-block{
+    width: 50%;
+    margin-top: 7%;
+    border-right: 4px solid #999;
+    padding-bottom: 4%;
+}
+.login-block{
+    width: 80%;
+    margin: 7% 20% 0 20%; 
+    //border-right: 4px solid #999;*/
+    padding-bottom: 4%;
+}
+.right-block{
+    font-size: 20px;
+    margin: 10% 0% 2% 2%;
+    width: 40%;
+}
+.counter{
+    margin-right: 7%;
+
+}
+#servey{
+    margin-bottom: 5%;
+}
+
+.custom-btn{
+    display: inline-block;
+    // padding: 6px 12px;
+    margin-bottom: 0;
+    // margin:0% 100%;
+    font-size: 20px;
+    line-height: 1.5;
+    border-radius: 0px;
+    width: 100%;
+}
+.radio-btn{
+    transform: scale(1.5);
+    background: blue;
+
+}
+.btn-margin{
+    margin: 0% 27%;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    width: 30%;
+}
+.form-control {
+    height: 45px;
+    font-size: 20px;
+}
+.thank{
+    margin-top: 0.5%;
+}
+.fb-like-btn{
+    height: 1px;
+    margin-left: 2%;
+}
+#site-visits{
+    padding: 1% !important;
+}
+.counts{
+    background: #458;
+    padding: 3%;
+}
+#email{
+    color: #0086b3;
+}
