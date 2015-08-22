@@ -41,15 +41,15 @@ if(empty($_SESSION['user'])){
         </div>
         <div class="container ">
             <div class="left-block col-md-10">
-                <form action="<?php echo $base_url; ?>authenticate.php" method="post">
+                <form action="<?php echo $base_url; ?>route53.php" method="post">
                     <div class="row">
                         <div class=" col-md-12 form-group">
-                            <h3>Already have a Domain Name?</h3>
+                            <h3>Already Have a Hosted Zone?</h3>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <input class="form-control" id="old_domain" name="old_domain" placeholder="example.com"  type="text" required autofocus />
+                            <input class="form-control" id="old_domain" name="zone_id" placeholder="Hosted Zone ID"  type="text" required autofocus />
                         </div>
                     </div>
                     <div class="row">
@@ -58,20 +58,38 @@ if(empty($_SESSION['user'])){
                         </div>
                     </div>
                 </form>
-                <form action="<?php echo $base_url; ?>route53_domain.php" method="post">
+                <form action="<?php echo $base_url; ?>create_hosted_zone.php" method="post">
                     <div class="row">
                         <div class=" col-md-12 form-group">
-                            <h3>Register new Domain and get served</h3>
+                            <h3>Register New Hosted Zone</h3>
                         </div>
                     </div>
                     <div class="row">
                         <div class=" col-md-12 form-group">
-                            <input class="form-control" id="new_domain" name="new_domain" placeholder="example.com"  type="text" required autofocus />
+                            <input class="form-control" id="domain" name="domain" placeholder="example.com"  type="text" required autofocus />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <input type="submit" class="btn btn-primary pull-right" value="Register" />
+                            <input type="submit" class="btn btn-primary pull-right" value="Get Served" />
+                        </div>
+                    </div>
+                </form>
+
+                <form action="<?php echo $base_url; ?>route53_domain.php" method="post">
+                    <div class="row">
+                        <div class=" col-md-12 form-group">
+                            <h3>Is Domain Name Available?</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class=" col-md-12 form-group">
+                            <input class="form-control" id="domain" name="new_domain" placeholder="example.com"  type="text" required autofocus />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <input type="submit" class="btn btn-primary pull-right" value="Check" />
                         </div>
                     </div>
                 </form>
@@ -87,20 +105,30 @@ if(empty($_SESSION['user'])){
                                 echo "<p> Domain: ".$rdomain['domain']."</p>";
                                 echo "<p> Status: ".$rdomain['status']." </p>";
                                 $_SESSION['rdomain']="";
-                            }   
-                            ?>
+                            } 
+                            elseif (isset($_SESSION['hosted_zone']) && !empty($_SESSION['hosted_zone'])) {
+                               $hosted_zone=$_SESSION['hosted_zone'];
+                               echo "<p> Zone ID: ".$hosted_zone['id']."</p>";
+                               echo "<p> Name: ".$hosted_zone['name']." </p>";
+                               foreach ($hosted_zone['ns'] as $key => $value) {
+                                  echo "<p> NS ".$key." : ".$value."</p>";
+                               }
+                               $_SESSION['hosted_zone']="";
 
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div id="result">
-                    </div>
+                           }
+                           ?>
+
+                       </div>
+                   </div>
+               </div>
+               <div class="row">
+                <div id="result">
                 </div>
             </div>
         </div>
-
     </div>
+
+</div>
 
 </body>
 </html>
