@@ -4,8 +4,12 @@ session_start();
 
 require 'vendor/autoload.php';
 use Aws\Route53Domains\Route53DomainsClient;
-$access_key='AKIAJCE4ZDY4NPCMCZMA';
-$secret_key='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';
+//////////////////
+require_once('/connectivity/aws_keys.php');
+$keys=aws_keys();
+$access_key=$keys['access_key'];
+$secret_key=$keys['secret_key'];
+//////////////////////////
 
 $client = Route53DomainsClient::factory(
 	array(
